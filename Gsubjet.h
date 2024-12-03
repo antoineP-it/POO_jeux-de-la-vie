@@ -2,7 +2,7 @@
 #define SUBJECT_H
 
 #include <vector>
-#include <Gobserver.h>
+#include "Gobserver.h"
 
 class Subject {
     private:
