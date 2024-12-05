@@ -8,7 +8,7 @@ using namespace std;
 
 class MgraphSFML {
 private:
-    sf::RenderWindow window; // on utilise cet attribut pour  la fenêtre graphique où tout sera dessiné
+    sf::RenduFenetre fenetre; // on utilise cet attribut pour  la fenêtre graphique où tout sera dessiné
 
 public:
 
