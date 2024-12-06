@@ -7,6 +7,7 @@ Cell::Cell() : estVivant(false), estObstacle(false), x(0), y(0) {}
 Cell::Cell(bool vivant, bool obstacle, int coordx, int coordy) : estVivant(vivant), estObstacle(obstacle), x(coordx), y(coordy) {}
 
 //Modificateur pour l'état de vie
+// logiquement accesseur pour l'état de vie
 bool Cell::getEstVivant() const {
     return estVivant;
 }
