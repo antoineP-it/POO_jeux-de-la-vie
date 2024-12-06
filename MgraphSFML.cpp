@@ -1,5 +1,7 @@
 #include "MgraphSFML.h"
-
+#include <iostream>
+#include <thread> 
+#include <chrono>
 
 MgraphSFML::MgraphSFML(int largeur, int longueur, const string& title) 
     : fenetre(sf::VideoMode(largeur, longueur), title) {}
@@ -46,26 +48,33 @@ bool MgraphSFML::estOuverte() const {// on  vérifie si la fenêtre est ouverte
 void MgraphSFML::renduGrille(const Grille& grille) {
     fenetre.clear(sf::Color::Black);
 
-    float cellWidth = fenetre.getSize().x / static_cast<float>(largeur);
-    float cellHeight = fenetre.getSize().y / static_cast<float>(longueur);
-
-    for (int x = 0; x < largeur; ++x) {
-        for (int y = 0; y < longueur; ++y) {
+    float cellWidth = 10.0f;//fenetre.getSize().x / static_cast<int>(largeur);
+    float cellHeight = 10.0f;// fenetre.getSize().y / static_cast<int>(longueur);
+     std::cout << longueur << std::endl;
+    std::cout << longueur << std::endl;
+    
+    for (int x = 0; x < 10; ++x) {
+        for (int y = 0; y < 10;++y) {
             sf::RectangleShape cell(sf::Vector2f(cellWidth, cellHeight));
             cell.setPosition(x * cellWidth, y * cellHeight);
-
+            
+            //std::cout << grille.estCellVivant(x, y) << std::endl;
+            
             // Colorer les cellules vivantes
             if (grille.estCellVivant(x, y)) {
-                cell.setFillColor(sf::Color::Green);
+                cell.setFillColor(sf::Color::Blue);
             } else {
-                cell.setFillColor(sf::Color::Black);
+                cell.setFillColor(sf::Color::White);
             }
 
             cell.setOutlineThickness(1);
             cell.setOutlineColor(sf::Color::White);
             fenetre.draw(cell);
+           
+            fenetre.display();
         }
     }
+     std::this_thread::sleep_for(std::chrono::seconds(3));
 
     fenetre.display();
 };
