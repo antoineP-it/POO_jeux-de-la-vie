@@ -29,3 +29,34 @@ public:
 
 
 #endif
+
+/*
+#ifndef MGRAPH_SFML_H
+#define MGRAPH_SFML_H
+
+#include <SFML/Graphics.hpp>
+#include "Grille.h"
+
+using namespace std;
+using namespace sf;
+
+const int CELL_SIZE = 10; // Taille des cellules
+
+class MgraphSFML : public Grille {
+private:
+    RenderWindow fenetre; // Fenêtre graphique pour le rendu
+
+public:
+    // Constructeur
+    MgraphSFML(int largeur, int longueur, const string& titre);
+
+    // Méthodes principales
+    void initializeGrid();            // Initialise aléatoirement la grille
+    void renderGrid();                // Affiche la grille
+    void handleEvents();              // Gère les événements utilisateur
+    void run();                       // Lancement de la simulation
+};
+
+#endif
+
+*/
