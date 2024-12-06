@@ -8,7 +8,7 @@
 using namespace std;
 using namespace sf;
 
-class MgraphSFML {
+class MgraphSFML { // : public Grille //( pour l'héritage)//
 private:
     sf::RenderWindow fenetre; // on utilise cet attribut pour  la fenêtre graphique où tout sera dessiné
     int largeur, longueur;
