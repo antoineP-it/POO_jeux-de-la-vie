@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "Cell.h"
-#include "FileManager.h"
+#include "GestionFichier.h"
 
 class Grille {
     protected:
@@ -15,6 +15,7 @@ class Grille {
         Grille(int largeur, int longueur);
 
         void initialiseRandom();
+        void initialiseDepuisFichier(const std::vector<std::vector<int>>& data);
         void miseAJour();
 
         //Gestion des Cellules
@@ -22,12 +23,14 @@ class Grille {
         void setCellVivant(int x, int y, bool etat);
 
         int countVoisins(int x, int y) const; 
-        
+        /*
         //notifie les observateurs après mise à jour
         void miseAJourAvecNotification() {
             miseAJour();
             notifObservers();
-        }
+        }*/
+
+        void afficher() const;
 
 };
 #endif
