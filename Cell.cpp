@@ -1,4 +1,4 @@
-#include <Cell.h>
+#include "Cell.h"
 
 //Constructeur par défaut
 Cell::Cell() : estVivant(false), estObstacle(false), x(0), y(0) {}
@@ -48,4 +48,3 @@ void Cell::setCoordY(int coordy) {
 void Cell::inverseEtat() {
     estVivant = !estVivant;
 }
-
