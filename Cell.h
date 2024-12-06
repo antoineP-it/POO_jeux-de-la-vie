@@ -1,8 +1,6 @@
 #ifndef CELL_H
 #define CELL_H
 
-#include <Grille.h> //Héritage
-
 
 class Cell {
     protected:
@@ -33,4 +31,5 @@ class Cell {
 
 
 };
+
 #endif
