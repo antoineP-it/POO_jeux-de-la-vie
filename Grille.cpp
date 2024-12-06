@@ -1,56 +1,36 @@
-#include "Grille.h"
-#include <cstdlib>
+#ifndef GRILL_H
+#define GRILLE_H
 
-Grille::Grille(int largeur, int longueur) : larg(largeur), longu(longueur), cells(largeur * longueur) {}
+#include <vector>
+#include "Cell.h"
+#include "GestionFichier.h"
 
-void Grille::initialiseRandom() {
-    for (auto& cell : cells) {
-        cell.setEstVivant(rand() % 2 == 0);
-    }
-    notifObservers();
-}
+class Grille {
+    protected:
+        int larg;
+        int longu;
+        std::vector<Cell> cells;
+    
+    public:
+        Grille(int largeur, int longueur);
 
+        void initialiseRandom();
+        void initialiseDepuisFichier(const std::vector<std::vector<int>>& data);
+        void miseAJour();
 
-void Grille::miseAJour() {
-    std::vector<Cell> nextEtat = cells;
-    for (int y = 0; y< longu; ++y) {
-        for (int x = 0; x<larg; ++x) {
-            int voisins = countVoisins(x,y);
-            bool vivant = estCellVivant(x,y);
+        //Gestion des Cellules
+        bool estCellVivant(int x, int y) const;
+        void setCellVivant(int x, int y, bool etat);
 
-            if (vivant && (voisins<2 || voisins >3)) {
-                nextEtat[y*larg + x].setEstVivant(false); //la cellule meurt
-            }
-            else if (!vivant && voisins ==3) {
-                nextEtat[y*larg + x].setEstVivant(true); //la cellule devient vivante
-            }
-        }
-    }
-    cells = nextEtat;
-}
+        int countVoisins(int x, int y) const; 
+        /*
+        //notifie les observateurs après mise à jour
+        void miseAJourAvecNotification() {
+            miseAJour();
+            notifObservers();
+        }*/
 
-bool Grille::estCellVivant(int x, int y) const {
-    return cells[y*larg + x].getEstVivant();
-}
+        void afficher() const;
 
-void Grille::setCellVivant(int x, int y, bool etat){
-    cells[y*larg + x].setEstVivant(etat);
-    notifObservers(); //Notifie après changement
-}
-
-int Grille::countVoisins(int x, int y) const {
-    int count = 0;
-    for (int dy = -1; dy<=1; ++dy) {
-        for (int dx = -1; dx<=1; ++dx) {
-            if (dx==0 && dy==0) continue;
-
-            int nx = x+dx;
-            int ny = y+dy;
-
-            if (nx>=0&& nx < larg && ny >=0 && ny <longu) {
-                count += estCellVivant(nx, ny) ? 1 : 0;
-            }
-        }
-    }
-    return count;
-}
+};
+#endif
