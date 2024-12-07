@@ -10,6 +10,6 @@ public:
     GestionFichier();
     std::vector<int> dimensionsGrille();
     std::vector<std::vector<int>> contenueGrille();
-    void initialiserDossierSauvegarde(); // Initialisation du dossier de sauvegarde
+    void initialiserDossierSauvegarde();
     void sauvegarderEtatGrille(const std::vector<std::vector<int>>& grille, int iteration);
 };

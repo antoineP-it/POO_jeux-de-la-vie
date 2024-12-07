@@ -4,8 +4,8 @@
 #include <fstream>
 #include <sstream>
 #include <filesystem> // Pour la gestion des dossiers
-#include <iomanip>    // Pour le formatage du temps
-#include <ctime>      // Pour obtenir le timestamp
+#include <iomanip>    // Pour mettre le temps au format date time classique
+#include <ctime>      // Pour obtenir le temps actuel
 
 GestionFichier::GestionFichier(){
     std::cout << "Veuillez renseigner le chemin d'accés du fichier source" << std::endl;
@@ -67,7 +67,6 @@ std::vector<std::vector<int>> GestionFichier::contenueGrille() {
     return grille;
 }
 void GestionFichier::initialiserDossierSauvegarde() {
-    // Obtenir la date et l'heure actuelles pour un nom unique
     auto now = std::chrono::system_clock::now();
     std::time_t t = std::chrono::system_clock::to_time_t(now);
     std::tm date = *std::localtime(&t);
@@ -77,12 +76,10 @@ void GestionFichier::initialiserDossierSauvegarde() {
         << std::put_time(&date, "%Y-%m-%d_%H-%M-%S");
     this -> dossierSauvegarde = nom.str();
 
-    // Créer le dossier
     std::filesystem::create_directory( this -> dossierSauvegarde);
 }
 
 void GestionFichier::sauvegarderEtatGrille(const std::vector<std::vector<int>>& grille, int iteration) {
-    // Créer un nom de fichier basé sur l'itération
     std::ostringstream nom;
     nom << this -> dossierSauvegarde << "/grille_" << iteration << ".txt";
 
@@ -92,7 +89,6 @@ void GestionFichier::sauvegarderEtatGrille(const std::vector<std::vector<int>>& 
         return;
     }
 
-    // Écrire la grille dans le fichier
     for (const auto& ligne : grille) {
         for (int cell : ligne) {
             fichier << cell << " ";

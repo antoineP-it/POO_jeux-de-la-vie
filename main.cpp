@@ -30,26 +30,39 @@ int main() {
             case 1: {
                 MgraphSFML moteurGraphique(largeur*50, longueur*50, "Jeux de la vie");
                 int iteration = 0;
-
+                auto etatPrecedent = grille.getEtatActuel();
                 while (moteurGraphique.estOuverte()) {
                     moteurGraphique.handleEvents();
                     fichier.sauvegarderEtatGrille(grille.getEtatActuel(), iteration++);
                     grille.miseAJour();
+                    if (grille.estStable(etatPrecedent)){
+                        std::cout << "Simulation terminée car Grille stable" << std::endl;
+                        break;
+                    }
+                    etatPrecedent= grille.getEtatActuel();
                     moteurGraphique.renduGrille(grille, longueur, largeur);
                     std::this_thread::sleep_for(std::chrono::milliseconds(300));
                 }
+
                 break;
             }
             case 2: {
                 int nb_iterations;
-                std::cout << "combien d'iterations voulez-vous ?" << std::endl;
+                std::cout << "Combien d'itérations voulez-vous ?" << std::endl;
                 std::cin >> nb_iterations;
-                for (int i = 0; i<nb_iterations; i++){
+
+                auto etatPrecedent = grille.getEtatActuel();
+                for (int i = 0; i < nb_iterations; i++) {
                     grille.afficher();
-                    grille.miseAJour();
                     fichier.sauvegarderEtatGrille(grille.getEtatActuel(), i);
+                    grille.miseAJour();
+                    if (grille.estStable(etatPrecedent)) {
+                        std::cout << "Simulation terminée car Grille stable après " << i << " itérations." << std::endl;
+                        break;
+                    }
+
+                    etatPrecedent = grille.getEtatActuel();
                 }
-                
                 break;
             }
             case 3:

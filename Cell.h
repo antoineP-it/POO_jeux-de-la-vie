@@ -21,7 +21,7 @@ class Cell {
 
         //Modificateur
         void setEstVivant(bool etat);
-        void setEstObstacle(bool obs);
+        void setEstObstacle(bool etat);
         void setCoordX(int coordx);
         void setCoordY(int coordy);
 

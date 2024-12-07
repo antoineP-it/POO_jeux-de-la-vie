@@ -22,15 +22,14 @@ class Grille {
         void setCellVivant(int x, int y, bool etat);
 
         int countVoisins(int x, int y) const; 
-        /*
-        //notifie les observateurs après mise à jour
-        void miseAJourAvecNotification() {
-            miseAJour();
-            notifObservers();
-        }*/
 
         void afficher() const;
         std::vector<std::vector<int>> getEtatActuel() const;
+
+        bool estStable(const std::vector<std::vector<int>>& etatPrecedent) const;
+
+
+
 
 };
 #endif
