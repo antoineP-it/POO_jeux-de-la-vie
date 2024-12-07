@@ -6,11 +6,9 @@
 MgraphSFML::MgraphSFML(int largeur, int longueur, const string& title) 
     : fenetre(sf::VideoMode(largeur, longueur), title) {}
 
-
 void MgraphSFML::creeFenetre() {
     fenetre.clear(sf::Color::Black); // pour effacer le contenu précédent de la fenêtre avec un fond noir.
 }
-
 
 void MgraphSFML::renduCell(int x, int y, sf::Color color) { //Méthode pour dessiner une cellule à une position donnée avec une couleur
 
@@ -19,7 +17,6 @@ void MgraphSFML::renduCell(int x, int y, sf::Color color) { //Méthode pour dess
     cell.setFillColor(color);
     fenetre.draw(cell);
 }
-
 
 void MgraphSFML::handleEvents() {//méthode pour gérer les événements utilisateur
     sf::Event event;
@@ -30,36 +27,30 @@ void MgraphSFML::handleEvents() {//méthode pour gérer les événements utilisa
     }
 }
 
-
 void MgraphSFML::closeFenetre() { // fermeture de la fenêtre
     fenetre.close();
 }
-
 
 void MgraphSFML::displayFenetre() {// on affiche le contenu de la fenêtre
     fenetre.display();
 }
 
-
 bool MgraphSFML::estOuverte() const {// on  vérifie si la fenêtre est ouverte
     return fenetre.isOpen();
 }
 
-void MgraphSFML::renduGrille(const Grille& grille) {
+void MgraphSFML::renduGrille(const Grille& grille, int longu, int larg) {
     fenetre.clear(sf::Color::Black);
 
-    float cellWidth = 10.0f;//fenetre.getSize().x / static_cast<int>(largeur);
-    float cellHeight = 10.0f;// fenetre.getSize().y / static_cast<int>(longueur);
-     std::cout << longueur << std::endl;
-    std::cout << longueur << std::endl;
-    
-    for (int x = 0; x < 10; ++x) {
-        for (int y = 0; y < 10;++y) {
+    // Calcul dynamique de la taille des cellules en fonction des dimensions de la fenêtre
+    float cellWidth = static_cast<float>(fenetre.getSize().x) / larg;
+    float cellHeight = static_cast<float>(fenetre.getSize().y) / longu;
+
+    for (int x = 0; x < longu; ++x) {
+        for (int y = 0; y < larg; ++y) {
             sf::RectangleShape cell(sf::Vector2f(cellWidth, cellHeight));
             cell.setPosition(x * cellWidth, y * cellHeight);
-            
-            //std::cout << grille.estCellVivant(x, y) << std::endl;
-            
+
             // Colorer les cellules vivantes
             if (grille.estCellVivant(x, y)) {
                 cell.setFillColor(sf::Color::Blue);
@@ -68,75 +59,9 @@ void MgraphSFML::renduGrille(const Grille& grille) {
             }
 
             cell.setOutlineThickness(1);
-            cell.setOutlineColor(sf::Color::White);
+            cell.setOutlineColor(sf::Color::Black); // Contour noir pour plus de contraste
             fenetre.draw(cell);
-           
-            fenetre.display();
         }
     }
-     std::this_thread::sleep_for(std::chrono::seconds(3));
-
-    fenetre.display();
-};
-/*
-#include "MgraphSFML.h"
-#include <ctime>
-#include <cstdlib>
-#include <thread>
-#include <chrono>
-
-
-MgraphSFML::MgraphSFML(int largeur, int longueur, const string& titre)
-    : Grille(largeur, longueur), fenetre(VideoMode(largeur * CELL_SIZE, longueur * CELL_SIZE), titre) {}
-
-
-void MgraphSFML::initializeGrid() {
-    srand(static_cast<unsigned>(time(0)));
-    for (int x = 0; x < larg; ++x) {
-        for (int y = 0; y < longu; ++y) {
-            setCellEtat(x, y, rand() % 2); // 1 = vivant, 0 = mort
-        }
-    }
-}
-
-
-void MgraphSFML::renderGrid() {
-    fenetre.clear(Color::Black);
-    RectangleShape cell(Vector2f(CELL_SIZE - 1.0f, CELL_SIZE - 1.0f));
-
-    for (int x = 0; x < larg; ++x) {
-        for (int y = 0; y < longu; ++y) {
-            if (estCellVivant(x, y)) {
-                cell.setPosition(x * CELL_SIZE, y * CELL_SIZE);
-                cell.setFillColor(Color::Blue);
-                fenetre.draw(cell);
-            }
-        }
-    }
-
     fenetre.display();
 }
-
-
-void MgraphSFML::handleEvents() {
-    Event event;
-    while (fenetre.pollEvent(event)) {
-        if (event.type == Event::Closed) {
-            fenetre.close();
-        }
-    }
-}
-
-
-void MgraphSFML::run() {
-    initializeGrid(); 
-
-    while (fenetre.isOpen()) {
-        handleEvents(); 
-        renderGrid();   
-        this_thread::sleep_for(chrono::milliseconds(100));
-    }
-}
-
-
-*/
