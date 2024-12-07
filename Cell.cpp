@@ -31,8 +31,8 @@ bool Cell::getEstObstacle() const {
 }
 
 //Modificateur pour l'état d'obstacle
-void Cell::setEstObstacle(bool obs) {
-    this -> estObstacle = obs;
+void Cell::setEstObstacle(bool etat) {
+    this -> estObstacle = etat;
 }
 
 //Accesseur pour les coordonnéesde x
