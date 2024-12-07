@@ -1,51 +1,60 @@
 #include "Cell.h"
 
 //Constructeur par défaut
-Cell::Cell() : estVivant(false), estObstacle(false), x(0), y(0) {}
+Cell::Cell() {
+    this -> estVivant = false;
+    this -> estObstacle = false;
+    this -> x = 0;
+    this -> y = 0;
+}
 
 //Constructeur paramétré
-Cell::Cell(bool vivant, bool obstacle, int coordx, int coordy) : estVivant(vivant), estObstacle(obstacle), x(coordx), y(coordy) {}
+Cell::Cell(bool vivant, bool obstacle, int coordx, int coordy) {
+    this -> estVivant = vivant;
+    this -> estObstacle = obstacle;
+    this -> x = coordx;
+    this -> y = coordy;
+}
 
 //Modificateur pour l'état de vie
-// logiquement accesseur pour l'état de vie
 bool Cell::getEstVivant() const {
-    return estVivant;
+    return this -> estVivant;
 }
 //Modificateur pour l'état vivant
 void Cell::setEstVivant(bool etat) {
-    estVivant = etat;
+    this -> estVivant = etat;
 }
 
 //Accesseur pour etat d'obstacle
 bool Cell::getEstObstacle() const {
-    return estObstacle;
+    return this -> estObstacle;
 }
 
 //Modificateur pour l'état d'obstacle
 void Cell::setEstObstacle(bool obs) {
-    estObstacle = obs;
+    this -> estObstacle = obs;
 }
 
 //Accesseur pour les coordonnéesde x
 int Cell::getCoordX() const {
-    return x;
+    return this -> x;
 }
 
 //Modificateur pour les coodonnées de x
 void Cell::setCoordX(int coordx) {
-    x = coordx;
+    this -> x = coordx;
 }
 
 //Idem pour les coordonnées de y
 int Cell::getCoordY() const {
-    return y;
+    return this -> y;
 }
 
 void Cell::setCoordY(int coordy) {
-    y = coordy;
+    this -> y = coordy;
 }
 
 //Méthode d'inversion d'état
 void Cell::inverseEtat() {
-    estVivant = !estVivant;
+    this -> estVivant = ! this -> estVivant;
 }

@@ -1,20 +1,15 @@
-#ifndef GESTIONFICHIER_H
-#define GESTIONFICHIER_H
-#include <string>
 #include <vector>
-
+#include <string>
 
 class GestionFichier {
-    private :
+private:
     std::string cheminAcces;
+    std::string dossierSauvegarde;
 
-    public : 
+public:
     GestionFichier();
-    std::vector<int> dimensionsGrille() ;
+    std::vector<int> dimensionsGrille();
     std::vector<std::vector<int>> contenueGrille();
-    void SauvegarderGrille();
+    void initialiserDossierSauvegarde(); // Initialisation du dossier de sauvegarde
+    void sauvegarderEtatGrille(const std::vector<std::vector<int>>& grille, int iteration);
 };
-
-
-
-#endif

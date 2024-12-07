@@ -1,4 +1,4 @@
-#ifndef GRILL_H
+#ifndef GRILLE_H
 #define GRILLE_H
 
 #include <vector>
@@ -14,7 +14,6 @@ class Grille {
     public:
         Grille(int largeur, int longueur);
 
-        void initialiseRandom();
         void initialiseDepuisFichier(const std::vector<std::vector<int>>& data);
         void miseAJour();
 
@@ -31,6 +30,7 @@ class Grille {
         }*/
 
         void afficher() const;
+        std::vector<std::vector<int>> getEtatActuel() const;
 
 };
 #endif
