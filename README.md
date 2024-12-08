@@ -125,9 +125,12 @@ Pour installer la bibliothèque SFML, il vous faudra :
 
 Il faudra suivre les commandes :
 <div align='center'>
-  sudo apt updade  
+  sudo apt updade 
+  
   sudo apt upgrade  
+  
   sudo apt-get install libsfml-dev  
+  
   brew install sfml  
 </div>
   
