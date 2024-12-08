@@ -15,6 +15,9 @@ Dans ce document, vous retrouverez la documentation technique et utilisateur de 
 
 Afin de réspecter les notions de paradigme objet, nous avons séparé chaque classes dans un fichier différent. Pour chaque classes, nous avons un fichier d'en-tête .h qui nous fournit des informations sur les déclarations des classes et des méthodes de celles-ci. Avec ces fichiers, nous avons un fichier .cpp contenant la definition des classes et des méthodes déclarés dans sont .h respectif. Ensuite nous avons le fichier main.cpp qui est le fichier permettant d'appeller toutes nos classes. 
 Conformement au diagramme de classe, dans notre projet nous avons :
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/56f38f8b-0ade-4957-be5a-14498ae6f1a5" />
+</p>
 <p align='center'>
 ![image](https://github.com/user-attachments/assets/56f38f8b-0ade-4957-be5a-14498ae6f1a5)
 </p>
