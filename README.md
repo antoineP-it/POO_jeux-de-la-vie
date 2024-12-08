@@ -135,7 +135,7 @@ Ensuite, il va falloir compiler les fichiers du programme. Pour ce faire, si vou
 
 Puis il ne vous reste plus qu'à lancer le programme en tapant la commande 
 <div align='center'>
-  `./programme`
+  ./programme
 </div>
 
 ### Principes du jeu
@@ -175,3 +175,5 @@ Ensuite, vous pouvez quitter le jeu en choisissant l'option numéro 4.
 
 
 # Conclusion 
+
+Pour conclure, cette documentation technique permet de comprendre comment nous avons techniquement implémenté le jeux de la vie de John Conway. Elle permet aussi de savoir dans quel environnement être, quels sont les prérequis et comment jouer à notre adaptation du jeux de la vie. 
