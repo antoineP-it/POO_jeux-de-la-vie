@@ -176,4 +176,4 @@ Ensuite, vous pouvez quitter le jeu en choisissant l'option numéro 4.
 
 # Conclusion 
 
-Pour conclure, cette documentation technique permet de comprendre comment nous avons techniquement implémenté le jeux de la vie de John Conway. Elle permet aussi de savoir dans quel environnement être, quels sont les prérequis et comment jouer à notre adaptation du jeux de la vie. 
+Pour conclure, la documentation technique permet de comprendre comment nous avons techniquement implémenté le jeux de la vie de John Conway. Elle l'explique en détaillant les fonction, les données d'entrées et le sdonnées de retours de chaque méthodes et fonctions de notre programme. Elle permet aussi de savoir dans quel environnement être et quels sont les prérequis de notre adaptation du jeux de la vie. Ensuite, nous avons la documentation utilisateur qui permet de savoir quels sont les options de jeux qui nous sont proposées et comment y jouer. Dans sa globalitée, ces deux documentations permettent d'avoir le necessaire pour bien comprendre et jouer à notre adaptation du jeux de la vie. 
