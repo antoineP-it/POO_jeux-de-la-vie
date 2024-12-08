@@ -85,6 +85,28 @@ void renduGrille(const Grille& grille, int longu, int larg) : permet d’affic
 
 bool estOuverte() const : permet de savoir si une fenetre est ouverte ou non en renvoyant true ou false.
 
+#### Différentes bibliothèques utilisées dans le programme
+
+- Iostream
+Bibliothèque permettant l’utilisation des flux d’entrée et de sortie standard en C++. Pour faire l'équivalent des prints par exemple. 
+
+- Vector
+Bibliothèque permettant de travailler avec des vecteurs. Pour gérer notre grille contenant les cellules par exemple. 
+
+- Fstream
+Bibliothèque permettant de lire ou d’écrire dans des fichiers. 
+
+- Filesystem
+Bibliothèque permettant la gestion des fichiers et des répertoires. 
+
+- Iomanip
+Bibliothèque permettant la manipulation des entrées et sorties de manières plus précise. 
+
+- Thread
+Bibliothèque permettant de travailler sur des threads (Thread = Flux d’exécution dans un programme). 
+
+- Chrono
+Bibliothèque permettant la manipulation et la prise de mesure des durées et intervalles , elle permet aussi de travailler avec des horloges. 
 
 
 
