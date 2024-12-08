@@ -128,9 +128,7 @@ Il faudra suivre les commandes :
   sudo apt updade 
   
   sudo apt upgrade  
-  
   sudo apt-get install libsfml-dev  
-  
   brew install sfml  
 </div>
   
