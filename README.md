@@ -9,6 +9,8 @@ L’objectif de notre projet est l’implémentation de ce jeu en C++ avec des c
 - Mode graphique : affiche la grille et l’état des cellules sur une interface graphique.
 
 Dans ce document, vous retrouverez la documentation technique et utilisateur de notre projet. 
+
+Lien du GitHub : https://github.com/antoineP-it/POO_jeux-de-la-vie
 ## Documentation technique 
 
 ### Architecture générale du projet 
