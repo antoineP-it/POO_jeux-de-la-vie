@@ -180,24 +180,10 @@ Le mode graphique quant à lui permet l’ouverture d’une interface graphique 
   <img src="https://github.com/user-attachments/assets/1f680181-420e-4939-8897-7c7b45da96cd" />
 </p>
 
-Ensuite vous voupez quitter le jeux choisissant l'option numéro 4. 
+Ensuite vous pouvez quitter le jeux choisissant l'option numéro 4. 
 
 
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
+# Conclusion 
 
 
 
