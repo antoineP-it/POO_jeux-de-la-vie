@@ -142,6 +142,27 @@ Ensuite, il va falloir compiler les fichiers du programme. Pour ce faire, si vou
   
 </div>
 
+Puis il ne vous reste plus qu'a lancer le programme en tapant la commande 
+<div align='center'>
+  ./programme
+</div>
+
+### Principes du jeux 
+- Règle 1 : Une cellule morte possédant exactement trois voisines vivantes devient vivante. 
+
+- Règle 2 : Une cellule vivante possédant deux ou trois voisines vivantes reste vivante, sinon elle meurt.
+
+### Comment jouer 
+
+Une fois que le jeux est lancé avec la commande ./programme, il va vous demander de rentrer le chemin d'accés du fichier source (le fichier contenant la grille de départ).
+Vous pourrez alors rentrer test.txt par exemple comme dans l'exemple ci-contre : 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/3fe8d0e6-87e3-4a01-ad17-d183c7818566" />
+</p>
+
+
+
 
 
   
