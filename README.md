@@ -135,7 +135,7 @@ Ensuite, il va falloir compiler les fichiers du programme. Pour ce faire, si vou
 
 Puis il ne vous reste plus qu'à lancer le programme en tapant la commande 
 <div align='center'>
-  ./programme
+  `./programme`
 </div>
 
 ### Principes du jeu
@@ -148,7 +148,7 @@ Une fois que le jeu est lancé avec la commande `./programme`, il va vous demand
 Vous pourrez alors rentrer `test.txt`, par exemple, comme dans l'exemple ci-contre : 
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/3fe8d0e6-87e3-4a01-ad17-d183c7818566" />
+  <img src="https://github.com/user-attachments/assets/65487e92-eb63-480d-a9a0-53591cdd7471" />
 </p>
 
 Ensuite, vous arriverez dans un menu vous permettant de choisir les différents modes de jeu ou de quitter le jeu : 
@@ -161,8 +161,9 @@ Ensuite, vous arriverez dans un menu vous permettant de choisir les différents 
 Si vous choisissez le mode console, il vous permettra de choisir le nombre d’itérations et vous donnera l’évolution des cellules dans votre console sous forme de nombres entiers avec `1` pour vivant et `0` pour mort. Par exemple :
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a3e77d96-8506-42f2-8b5a-2e5bb09920ac" />
+  <img src="https://github.com/user-attachments/assets/07bf7fd1-6584-48b6-b6c8-7580cada6532" />
 </p>
+
 
 Le mode graphique, quant à lui, permet l’ouverture d’une interface graphique avec les cellules vivantes en bleu et celles mortes en blanc. Le jeu se termine lorsque toutes les cellules sont mortes ou lorsque la grille atteint un état stable. Par exemple : 
 
