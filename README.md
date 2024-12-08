@@ -117,13 +117,12 @@ Bibliothèque permettant la manipulation et la prise de mesure des durées et in
 Pour lancer le jeux, vous aurez besoin d'installer plusieurs choses :
 - Un compilateur C++ pour pouvoir exécuter le code sur votre appareil.
 - La librairie Simple and Fast Multimedia Library (SFML) pour la gestion des fenetres graphiques.
+- Environement linux (l'environement linux n'est pas obligatoire pour lancer le jeux mais la documentation va supposer que vous etes en environement linux)
 
 ### Installation de la bibliothèque 
 
-Pour installer la bibliothèque SFML, il vous faudra : 
-- Sur un environement linux :
+Pour installer la bibliothèque SFML, il vous faudra suivre les commandes :
 
-Il faudra suivre les commandes :
 <div align='center'>
   sudo apt updade 
   
@@ -131,6 +130,20 @@ Il faudra suivre les commandes :
   sudo apt-get install libsfml-dev  
   brew install sfml  
 </div>
+
+### Lancement du jeux 
+
+Pour pouvoir lancer le jeux, il faut tout d'abord télecharger les fichiers du code source dans un dossier. 
+Ensuite, il faut ouvrir un terminal et se placer dans le dossier contenant les différents fichiers du programme. 
+Sous un environement linux, vous pouvez vous déplacer grâce aux commandes cd nomDossier et cd..
+Ensuite, il va falloir compiler les fichiers du programme. Pour ce faire, si vous êtes dans l'environement Linux et que vous avez installé le compilateur g++, vous pouvez creer un executable grace à la commande : 
+<div align='center'>
+  g++ main.cpp cell.cpp Grille.cpp GestionFichier.cpp MgraphSFML.cpp -o programme -lsfml-graphics -lsfml-window -lsfml-system
+  
+</div>
+
+
+
   
 
 
