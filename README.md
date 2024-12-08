@@ -110,9 +110,26 @@ Bibliothèque permettant de travailler sur des threads (Thread = Flux d’exécu
 - Chrono
 Bibliothèque permettant la manipulation et la prise de mesure des durées et intervalles , elle permet aussi de travailler avec des horloges. 
 
+## Documentation utilisateur 
 
+### Prérequis pour lancer le jeux 
 
+Pour lancer le jeux, vous aurez besoin d'installer plusieurs choses :
+- Un compilateur C++ pour pouvoir exécuter le code sur votre appareil.
+- La librairie Simple and Fast Multimedia Library (SFML) pour la gestion des fenetres graphiques.
 
+### Installation de la bibliothèque 
+
+Pour installer la bibliothèque SFML, il vous faudra : 
+- Sur un environement linux :
+  Il faudra suivre les commandes :
+  <p align='center'>
+    sudo apt updade
+    sudo apt upgrade 
+    sudo apt-get install libsfml-dev 
+    brew install sfml
+  </p>
+  
 
 
 
