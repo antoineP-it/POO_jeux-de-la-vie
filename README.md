@@ -161,6 +161,26 @@ Vous pourrez alors rentrer test.txt par exemple comme dans l'exemple ci-contre :
   <img src="https://github.com/user-attachments/assets/3fe8d0e6-87e3-4a01-ad17-d183c7818566" />
 </p>
 
+Ensuite vous arriverez dans un menu vous permettant de choisir les différents modes de jeu ou vous permettant de quitter le jeu : 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/d1e320c3-d4ac-4411-8ae3-35ee0fdffcfe" />
+</p>
+
+
+Si vous choisissez le mode console, il vous permettra de choisir le nombre d’itérations et vous donnera l’évolution des cellules dans votre console sous forme de nombre entier avec 1 pour vivant et 0 pour mort. Par exemple :
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/a3e77d96-8506-42f2-8b5a-2e5bb09920ac" />
+</p>
+
+Le mode graphique quant à lui permet l’ouverture d’une interface graphique avec les cellules vivantes en bleu et celles mortes en blanc , le jeu se termine lorsque toutes les cellules sont mortes ou lorsque la grille atteint un état stable. Par exemple : 
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/1f680181-420e-4939-8897-7c7b45da96cd" />
+</p>
+
+Ensuite vous voupez quitter le jeux choisissant l'option numéro 4. 
 
 
 
