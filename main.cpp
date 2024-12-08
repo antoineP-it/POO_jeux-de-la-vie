@@ -1,4 +1,36 @@
+
+/*
+#include "Grille.h"
+
+int main(){
+    
+    GestionFichier fichier;
+    Grille grille(fichier.dimensionsGrille()[1], fichier.dimensionsGrille()[0]);
+    //grille.initialiseRandom(); //à changer afin de l'initialiser en fonction du fichier source 
+    auto contenu = fichier.contenueGrille();
+    grille.initialiseDepuisFichier(contenu);
+
+    grille.afficher();
+    for (int i=0; i<5; i++){
+        grille.miseAJour();
+        grille.afficher();
+    }
+
+    
+
+
+    return 0;
+
+
+
+    
+}
+*/
+
+
+//#include "Grille.h"
 #include "MgraphSFML.h"
+#include "Mconsole.h"
 #include <iostream>
 #include <thread> 
 #include <chrono>
@@ -13,7 +45,6 @@ void afficherMenu() {
 
 int main() {
     GestionFichier fichier;
-    fichier.initialiserDossierSauvegarde();
     int longueur = fichier.dimensionsGrille()[0];
     int largeur = fichier.dimensionsGrille()[1];
     Grille grille(largeur, longueur);
@@ -28,41 +59,21 @@ int main() {
 
         switch (choix) {
             case 1: {
-                MgraphSFML moteurGraphique(largeur*50, longueur*50, "Jeux de la vie");
-                int iteration = 0;
-                auto etatPrecedent = grille.getEtatActuel();
+                MgraphSFML moteurGraphique(largeur*10, longueur*10, "Jeux de la vie");
                 while (moteurGraphique.estOuverte()) {
                     moteurGraphique.handleEvents();
-                    fichier.sauvegarderEtatGrille(grille.getEtatActuel(), iteration++);
                     grille.miseAJour();
-                    if (grille.estStable(etatPrecedent)){
-                        std::cout << "Simulation terminée car Grille stable" << std::endl;
-                        break;
-                    }
-                    etatPrecedent= grille.getEtatActuel();
-                    moteurGraphique.renduGrille(grille, longueur, largeur);
-                    std::this_thread::sleep_for(std::chrono::milliseconds(300));
+                    moteurGraphique.renduGrille(grille);
+                    std::this_thread::sleep_for(std::chrono::seconds(0));
                 }
-
                 break;
             }
             case 2: {
-                int nb_iterations;
-                std::cout << "Combien d'itérations voulez-vous ?" << std::endl;
-                std::cin >> nb_iterations;
-
-                auto etatPrecedent = grille.getEtatActuel();
-                for (int i = 0; i < nb_iterations; i++) {
+                for (int i = 0; i<5; i++){
                     grille.afficher();
-                    fichier.sauvegarderEtatGrille(grille.getEtatActuel(), i);
                     grille.miseAJour();
-                    if (grille.estStable(etatPrecedent)) {
-                        std::cout << "Simulation terminée car Grille stable après " << i << " itérations." << std::endl;
-                        break;
-                    }
-
-                    etatPrecedent = grille.getEtatActuel();
                 }
+                
                 break;
             }
             case 3:
@@ -75,3 +86,21 @@ int main() {
 
     return 0;
 }
+
+/*
+#include "MgraphSFML.h"
+#include "Grille.h"
+
+int main() {
+    // Créer une fenêtre SFML et une grille
+    MgraphSFML fenetre(800, 600, "Simulation");
+    Grille grille(80, 60); // Grille 80x60 cellules
+
+    while (fenetre.estOuverte()) {
+        fenetre.handleEvents();  // Gérer les événements utilisateur
+        fenetre.renduGrille(grille); // Dessiner la grille
+    }
+
+    return 0;
+}
+*/
