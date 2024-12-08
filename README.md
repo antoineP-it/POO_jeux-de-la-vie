@@ -121,13 +121,13 @@ Pour lancer le jeux, vous aurez besoin d'installer plusieurs choses :
 ### Installation de la bibliothèque 
 
 Pour installer la bibliothèque SFML, il vous faudra : 
-- Sur un environement linux :
+- Sur un environement linux : \n
 Il faudra suivre les commandes :
 <p align='center'>
-  sudo apt updade
-  sudo apt upgrade 
-  sudo apt-get install libsfml-dev 
-  brew install sfml
+  sudo apt updade \n
+  sudo apt upgrade \n
+  sudo apt-get install libsfml-dev \n
+  brew install sfml \n
 </p>
   
 
