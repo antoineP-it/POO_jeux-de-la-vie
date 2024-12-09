@@ -1,6 +1,10 @@
 #include <vector>
 #include <string>
 
+#include <filesystem> // Pour la gestion des dossiers
+#include <iomanip>    // Pour mettre le temps au format date time classique
+#include <iostream>
+#include <fstream>
 class GestionFichier {
 private:
     std::string cheminAcces;

@@ -1,7 +1,5 @@
 #include "MgraphSFML.h"
-#include <iostream>
-#include <thread> 
-#include <chrono>
+
 
 MgraphSFML::MgraphSFML(int largeur, int longueur, const string& title) 
     : fenetre(sf::VideoMode(largeur, longueur), title) {}
