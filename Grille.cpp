@@ -1,7 +1,4 @@
 #include "Grille.h"
-#include <cstdlib>
-#include <iostream>
-#include <iterator>
 
 Grille::Grille(int largeur, int longueur) : larg(largeur), longu(longueur), cells(largeur * longueur) {
     for (int y = 0; y < longueur; ++y) {

@@ -2,6 +2,7 @@
 #define GRILLE_H
 
 #include <vector>
+#include <iostream>
 #include "Cell.h"
 #include "GestionFichier.h"
 
@@ -24,6 +25,7 @@ class Grille {
         int countVoisins(int x, int y) const; 
 
         void afficher() const;
+
         std::vector<std::vector<int>> getEtatActuel() const;
 
         bool estStable(const std::vector<std::vector<int>>& etatPrecedent) const;

@@ -1,11 +1,6 @@
 #include "GestionFichier.h"
-#include <iostream>
-#include <vector>
-#include <fstream>
-#include <sstream>
-#include <filesystem> // Pour la gestion des dossiers
-#include <iomanip>    // Pour mettre le temps au format date time classique
-#include <ctime>      // Pour obtenir le temps actuel
+//#include <sstream>
+//#include <ctime>      // Pour obtenir le temps actuel
 
 GestionFichier::GestionFichier(){
     std::cout << "Veuillez renseigner le chemin d'accés du fichier source" << std::endl;

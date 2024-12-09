@@ -3,6 +3,9 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+#include <iostream>
+#include <thread> 
+#include <chrono>
 #include "Grille.h"
 
 using namespace std;
